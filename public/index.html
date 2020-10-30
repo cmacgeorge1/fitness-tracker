@@ -13,8 +13,8 @@
     <header>
         <h1>Your Fitness Tracker!</h1>
     </header>
-
-    <form>
+    
+    <form class="container">
         <div class="form-group">
             <label for="exerciseName">Exercise Name</label>
             <input type="email" class="form-control" id="exerciseName" aria-describedby="emailHelp">
@@ -39,9 +39,11 @@
             <label for="exerciseDuration">Duration</label>
             <input type="number" class="form-control" id="exerciseDuration">
         </div>
-        <button class="btn btn-primary">Create New Workout</button>
-        <button class="btn btn-primary">Add to Existing Workout</button>
+        <button class="btn btn-primary" id="createExercise">Create New Workout</button>
+        <button class="btn btn-primary" id="updateExercise">Add to Existing Workout</button>
     </form>
+
+    <div class="container" id="prevWorkout"></div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
