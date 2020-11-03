@@ -18,6 +18,7 @@
   "homepage": "https://github.com/cmacgeorge1/fitness-tracker#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.10.11"
+    "mongoose": "^5.10.11",
+    "morgan": "^1.10.0"
   }
 }

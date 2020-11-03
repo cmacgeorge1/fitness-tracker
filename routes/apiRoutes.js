@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const db = require("./models/fitnessModel");
+const db = require("../models/fitnessModel");
 
 // db.User.create({ name: "Ernest Hemingway" })
 //   .then(dbUser => {
@@ -19,17 +19,18 @@ const db = require("./models/fitnessModel");
 //     });
 // });
 
-// app.get("/user", (req, res) => {
-//   db.User.find({})
-//     .then(dbUser => {
-//       res.json(dbUser);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
+router.put("/api/saveWorkout/:id", (req, res) => {
+  db.findByIdAndUpdate(req.params.id, {$push:{exercises:req.body}}, {new:true})
+    .then(dbUser => {
+      res.json(dbUser);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
 
 router.post("/api/saveWorkout", ({ body }, res) => {
+    console.log(body)
   db.create(body)
     
     .then(dbUser => {
@@ -41,13 +42,15 @@ router.post("/api/saveWorkout", ({ body }, res) => {
     });
 });
 
-// app.get("/populateduser", (req, res) => {
-//   db.User.find({})
-//     .populate("notes")
-//     .then(dbUser => {
-//       res.json(dbUser);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
+router.get("/exerciseData", (req, res) => {
+  db.find({})
+    .then(dbUser => {
+        console.log(dbUser)
+      res.json(dbUser);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
+
+module.exports = router
