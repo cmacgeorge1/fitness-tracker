@@ -35,7 +35,7 @@ $.get("/exerciseData").then (function(results) {
     var exerciseList = results[results.length - 1].exercises
     var htmlString = `<table>
     <thead>
-    <th>NAme</th>
+    <th>Name</th>
     <th>Sets</th>
     <th>REPs</th>
     <th>Type</th>
