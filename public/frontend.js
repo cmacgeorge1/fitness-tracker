@@ -50,6 +50,8 @@ $.get("/exerciseData").then (function(results) {
         <td>${exerciseList[i].exerciseSets}</td>
         <td>${exerciseList[i].exerciseReps}</td>
         <td>${exerciseList[i].exerciseType}<td>
+        <td>${exerciseList[i].exerciseWeight}<td>
+        <td>${exerciseList[i].exerciseDuration}<td>
         `
     }
     htmlString += '</tbody></table>'
